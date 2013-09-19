@@ -19,9 +19,15 @@ the oldest "hourly" snapshot, moves the remaining snapshots up one slot, leaving
 in place for sync to work against.  Adding more snapshots per day is pretty easy, just adding some
 additional sections to the script.
 
+make_snapshot_wrapper.sh - Script using nocache and ionice to reduce the system
+load while executeing make_snapshot.sh.  Optional.
+
 daily_snapshot_rotate.sh - Currently configured for five days.  Cleans up the oldest daily snapshot,
 moves the remaining daily snapshots up one slot, then Takes the latest "hourly" snapshot and copies
 it to the newest daily snapshot.
+
+daily_snapshot_rotate_wrapper.sh - Script using nocache and ionice to reduce the system
+load while executeing daily_snapshot_rotate.sh.  Optional.
 
 Using this, we have snapshots that are 6, 12, 18, 24, 48, 72, 96, and 120 hours old from which we
 can easily do diffs, copies, etc to restore files.
