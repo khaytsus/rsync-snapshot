@@ -53,3 +53,7 @@ for make_snapshot to be ran at 0,6,12,18 and daily_snapshot_rotate to be ran onc
 
 Hope these scripts are useful to someone.  I've used them for years now and they've saved me from
 user error (both large and small!) many times.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/khaytsus/rsync-snapshot/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
