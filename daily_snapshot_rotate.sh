@@ -2,7 +2,7 @@
 # ----------------------------------------------------------------------
 # mikes handy rotating-filesystem-snapshot utility: daily snapshots
 # ----------------------------------------------------------------------
-# intended to be run daily as a cron job when hourly.3 contains the
+# intended to be run daily as a cron job when hourly.0 contains the
 # midnight (or whenever you want) snapshot; say, 13:00 for 4-hour snapshots.
 # ----------------------------------------------------------------------
 
@@ -70,13 +70,13 @@ $MV $SNAPSHOT_RW/daily.0 $SNAPSHOT_RW/daily.1;	\
 fi;
 
 # step 3: make a hard-link-only (except for dirs) copy of
-# hourly.3, assuming that exists, into daily.0
-if [ -d $SNAPSHOT_RW/hourly.3 ] ; then			\
-$CP -al $SNAPSHOT_RW/hourly.3 $SNAPSHOT_RW/daily.0 ;	\
+# hourly.0, assuming that exists, into daily.0
+if [ -d $SNAPSHOT_RW/hourly.0 ] ; then			\
+$CP -al $SNAPSHOT_RW/hourly.0 $SNAPSHOT_RW/daily.0 ;	\
 fi;
 
 # note: do *not* update the mtime of daily.0; it will reflect
-# when hourly.3 was made, which should be correct.
+# when hourly.0 was made, which should be correct.
 
 # now remount the RW snapshot mountpoint as readonly
 
